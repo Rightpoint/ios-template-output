@@ -22,6 +22,11 @@ extension Actionable {
     }
 
     func notify(_ action: ActionType) -> (UIControl) -> Void {
+        if true {
+            let example = "asdf"
+        } else {
+            let example = "jkl;"
+        }
         return { [weak self] _ in
             self?.notify(action)
         }
@@ -34,3 +39,6 @@ extension Actionable {
     }
 
 }
+
+
+
