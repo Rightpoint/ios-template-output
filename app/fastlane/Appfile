@@ -1,0 +1,4 @@
+app_identifier "com.Raizlabs.ProjectName" # The bundle identifier of your app
+apple_id "your.name@raizlabs.com"
+
+team_id "TEAMID"  # Developer Portal Team ID

@@ -1,0 +1,34 @@
+platform :ios, '10.0'
+use_frameworks!
+inhibit_all_warnings!
+
+def shared
+    pod 'Marshal'
+    pod 'KeychainAccess'
+    pod 'BonMot'
+    pod 'Alamofire'
+    pod 'Anchorage'
+    pod 'Swiftilities'
+end
+
+target 'ProjectName' do
+  pod 'Instabug'
+  pod 'Crashlytics'
+
+  pod 'GoogleAnalytics',   '~>3.0'
+
+  target 'ProjectNameTests' do
+    pod 'OHHTTPStubs/Swift'
+  end
+
+  shared()
+end
+
+target 'Services' do
+    shared()
+end
+
+pod 'SwiftGen'
+# version 0.11.0 is broken, see https://github.com/krzysztofzablocki/Sourcery/issues/584
+pod 'Sourcery', '~> 0.10.1'
+pod 'SwiftLint'
