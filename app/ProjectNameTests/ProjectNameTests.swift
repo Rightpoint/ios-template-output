@@ -14,3 +14,4 @@ class ProjectNameTests: XCTestCase {
         XCTAssertFalse(UserDefaults.hasOnboarded)
     }
 }
+
