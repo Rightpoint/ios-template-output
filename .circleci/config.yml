@@ -1,0 +1,145 @@
+# .circleci/config.yml
+version: 2
+jobs:
+  test:
+    macos:
+      xcode: "9.3.0"
+    environment:
+      FL_OUTPUT_DIR: /Users/distiller/project/output
+      LC_ALL: en_US.UTF-8
+      LANG: en_US.UTF-8
+      # required to set the correct ruby version
+      # see https://circleci.com/docs/2.0/testing-ios/#custom-ruby-versions
+    shell: /bin/bash --login -eo pipefail
+    working_directory: /Users/distiller/project
+    steps:
+      - checkout
+      - restore_cache:
+          key: 3-gems-{{ checksum "Gemfile.lock" }}
+      - run:
+          name: Restore Gems
+          command: |
+           bundle check --gemfile Gemfile || bundle install --gemfile Gemfile
+      - save_cache:
+          key: 3-gems-{{ checksum "Gemfile.lock" }}
+          # The path to the gems may change if .ruby-version file is changed or CircleCI image is updated.
+          paths:
+            - "/Users/distiller/.gem/ruby/2.4.4"
+      # Make sure that the output directory exists
+      - run: mkdir $FL_OUTPUT_DIR
+      - run:
+          name: Tests
+          command: |
+            cd app
+            bundle exec fastlane test
+      - run:
+          name: Code Coverage
+          when: always
+          command: |
+            cd app
+            bundle exec fastlane coverage
+      - run:
+          name: Screenshots
+          when: always
+          command: |
+            cd app
+            bundle exec fastlane snapshot
+      # Store xcov and slather Code Coverage HTML report artifacts
+      - store_artifacts:
+          path: /Users/distiller/project/app/build/xcov
+          destination: xcov
+      - store_artifacts:
+          path: /Users/distiller/project/app/build/slather
+          destination: slather
+      - store_artifacts:
+          path: /Users/distiller/project/app/fastlane/screenshots
+          destination: screenshots
+      - store_artifacts:
+          path: /Users/distiller/project/app/build/scan
+          destination: scan
+      - run:
+          name: Upload to Codecov
+          when: always
+          command: bash <(curl -s https://codecov.io/bash) -f app/build/slather/cobertura.xml -X coveragepy -X gcov -X xcode      
+      - run:
+          name: Danger
+          when: always
+          command: |
+            bundle exec danger
+            
+  integration:
+    macos:
+      xcode: "9.3.0"
+    environment:
+      FL_OUTPUT_DIR: /Users/distiller/project/output
+      LC_ALL: en_US.UTF-8
+      LANG: en_US.UTF-8
+    shell: /bin/bash --login -eo pipefail
+    working_directory: /Users/distiller/project
+    steps:
+      - checkout
+      - run: bundle install
+      - run: cd app && bundle exec fastlane develop
+      - store_artifacts:
+          path: "${FL_OUTPUT_DIR}/Project Name.ipa"
+  sprint:
+    macos:
+      xcode: "9.3.0"
+    environment:
+      FL_OUTPUT_DIR: /Users/distiller/project/output
+      LC_ALL: en_US.UTF-8
+      LANG: en_US.UTF-8
+    shell: /bin/bash --login -eo pipefail
+    working_directory: /Users/distiller/project
+    steps:
+      - checkout
+      - run: bundle install
+      - run: cd app && bundle exec fastlane sprint
+      - store_artifacts:
+          path: "${FL_OUTPUT_DIR}/Project Name.ipa"
+  beta:
+    macos:
+      xcode: "9.3.0"
+    environment:
+      FL_OUTPUT_DIR: /Users/distiller/project/output
+      LC_ALL: en_US.UTF-8
+      LANG: en_US.UTF-8
+    shell: /bin/bash --login -eo pipefail
+    working_directory: /Users/distiller/project
+    steps:
+      - checkout
+      - run: bundle install
+      - run: cd app && bundle exec fastlane beta
+      - store_artifacts:
+          path: "${FL_OUTPUT_DIR}/Project Name.ipa"
+
+workflows:
+  version: 2
+  integration:
+    jobs:
+      - test:
+          filters:
+            tags:
+              only: /.*/
+      - integration:
+          requires:
+            - test
+          filters:
+            branches:
+              only: develop
+      - sprint:
+          requires:
+            - test
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /sprint-.*/
+      - beta:
+          requires:
+            - test
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /beta-.*/
