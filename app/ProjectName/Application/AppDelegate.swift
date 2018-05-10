@@ -8,6 +8,34 @@
 
 import UIKit
 
+// let's add some swiftlint violations
+
+
+
+
+
+func test() {
+    if true {
+
+    } else {
+
+    }
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

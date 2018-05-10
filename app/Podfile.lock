@@ -6,12 +6,12 @@ PODS:
     - Fabric (~> 1.7.5)
   - Fabric (1.7.6)
   - GoogleAnalytics (3.17.0)
-  - Instabug (7.12.5):
-    - Instabug/Instabug (= 7.12.5)
-    - Instabug/InstabugCore (= 7.12.5)
-  - Instabug/Instabug (7.12.5):
+  - Instabug (7.12.6):
+    - Instabug/Instabug (= 7.12.6)
+    - Instabug/InstabugCore (= 7.12.6)
+  - Instabug/Instabug (7.12.6):
     - Instabug/InstabugCore
-  - Instabug/InstabugCore (7.12.5)
+  - Instabug/InstabugCore (7.12.6)
   - KeychainAccess (3.1.1)
   - Marshal (1.2.4)
   - OHHTTPStubs/Core (6.1.0)
@@ -106,7 +106,7 @@ DEPENDENCIES:
   - SwiftLint
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Alamofire
     - Anchorage
     - BonMot
@@ -130,7 +130,7 @@ SPEC CHECKSUMS:
   Crashlytics: aee1a064cbbf99b32efa3f056a5f458d846bc8ff
   Fabric: f8d42c893bb187326a7968b62abe55c36a987a46
   GoogleAnalytics: f42cc53a87a51fe94334821868d9c8481ff47a7b
-  Instabug: 7a3c51631266f2a9e901fd9e6ccd51541baf1dd4
+  Instabug: e8a1c419c61d581881783643bc967df6a748d423
   KeychainAccess: 7bd430028059754a3debab3cfc0bd1fc7fb85df3
   Marshal: 8e04e6624e506921db7143b0bfd83caee03f32d6
   OHHTTPStubs: 1e21c7d2c084b8153fc53d48400d8919d2d432d0
@@ -142,4 +142,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: e5ec954f5b4ccb7eadf2a81f61fe5807dc5aeba4
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.2
