@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'danger'
-gem 'danger-swiftlint'
+gem 'danger-swiftlint', '0.14.0'
 gem 'danger-xcov'
 gem 'danger-junit'
 gem 'xcov'
