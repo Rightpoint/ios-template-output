@@ -1,0 +1,217 @@
+# .circleci/config.yml
+version: 2
+jobs:
+  test:
+    macos:
+      xcode: "9.3.0"
+    environment:
+      FL_OUTPUT_DIR: /Users/distiller/project/output
+      LC_ALL: en_US.UTF-8
+      LANG: en_US.UTF-8
+      BUNDLE_JOBS: 3
+      BUNDLE_RETRY: 3
+      BUNDLE_PATH: /Users/distiller/project/app/build/gems
+      DISABLE_COVERALLS: true
+      # required to set the correct ruby version
+      # see https://circleci.com/docs/2.0/testing-ios/#custom-ruby-versions
+    shell: /bin/bash --login -eo pipefail
+    working_directory: /Users/distiller/project
+    steps:
+      - run:
+          name: Set Ruby Version
+          command:  echo "ruby-2.4" > ~/.ruby-version
+      - checkout
+      - restore_cache:
+          key: 4-gems-{{ checksum "Gemfile.lock" }}
+          # Fall back to a previous cache if exact match cannot be found
+          key: 4-gems-
+      - run:
+          name: Restore Gems
+          command: |
+           bundle check || bundle install
+      - save_cache:
+          key: 4-gems-{{ checksum "Gemfile.lock" }}
+          paths:
+            - "/Users/distiller/project/app/build/gems"
+      # Make sure that the output directory exists
+      - run: mkdir $FL_OUTPUT_DIR
+      - run:
+          name: Tests
+          command: |
+            cd app
+            bundle exec fastlane test
+      - run:
+          name: Code Coverage
+          when: always
+          command: |
+            cd app
+            bundle exec fastlane coverage
+      # Store xcov and slather Code Coverage HTML report artifacts
+      - store_artifacts:
+          path: /Users/distiller/project/app/build/xcov
+          destination: xcov
+      - store_artifacts:
+          path: /Users/distiller/project/app/build/slather
+          destination: slather
+      - store_artifacts:
+          path: /Users/distiller/project/app/build/scan
+          destination: scan
+      # Update Danger as soon as we have code coverage/tests, while waiting for screenshots to be generated
+      - run:
+          name: Danger
+          when: always
+          command: |
+            bundle exec danger
+      - run:
+          name: Upload to Codecov
+          when: always
+          command: bash <(curl -s https://codecov.io/bash) -f app/build/slather/cobertura.xml -X coveragepy -X gcov -X xcode      
+      - run:
+          name: Screenshots
+          when: always
+          command: |
+            cd app
+            bundle exec fastlane snapshot
+      - store_artifacts:
+          path: /Users/distiller/project/app/fastlane/screenshots
+          destination: screenshots
+      # Run Danger again once screenshots are complete
+      - run:
+          name: Danger
+          when: always
+          command: |
+            bundle exec danger
+      - run:
+          name: Post Screenshots to Slack
+          when: always
+          command: |
+            cd app
+            bundle exec fastlane slackshots
+            
+  integration:
+    macos:
+      xcode: "9.3.0"
+    environment:
+      FL_OUTPUT_DIR: /Users/distiller/project/output
+      LC_ALL: en_US.UTF-8
+      LANG: en_US.UTF-8
+      BUNDLE_JOBS: 3
+      BUNDLE_RETRY: 3
+      BUNDLE_PATH: /Users/distiller/project/app/build/gems
+    shell: /bin/bash --login -eo pipefail
+    working_directory: /Users/distiller/project
+    steps:
+      - run:
+          name: Set Ruby Version
+          command:  echo "ruby-2.4" > ~/.ruby-version
+      - checkout
+      - restore_cache:
+          key: 4-gems-{{ checksum "Gemfile.lock" }}
+          # Fall back to a previous cache if exact match cannot be found
+          key: 4-gems-
+      - run:
+          name: Restore Gems
+          command: |
+           bundle check || bundle install
+      - save_cache:
+          key: 4-gems-{{ checksum "Gemfile.lock" }}
+          paths:
+            - "/Users/distiller/project/app/build/gems"
+      - run: cd app && bundle exec fastlane develop
+      - store_artifacts:
+          path: "${FL_OUTPUT_DIR}/Project Name.ipa"
+  sprint:
+    macos:
+      xcode: "9.3.0"
+    environment:
+      FL_OUTPUT_DIR: /Users/distiller/project/output
+      LC_ALL: en_US.UTF-8
+      LANG: en_US.UTF-8
+      BUNDLE_JOBS: 3
+      BUNDLE_RETRY: 3
+      BUNDLE_PATH: /Users/distiller/project/app/build/gems
+    shell: /bin/bash --login -eo pipefail
+    working_directory: /Users/distiller/project
+    steps:
+      - run:
+          name: Set Ruby Version
+          command:  echo "ruby-2.4" > ~/.ruby-version
+      - checkout
+      - restore_cache:
+          key: 4-gems-{{ checksum "Gemfile.lock" }}
+          # Fall back to a previous cache if exact match cannot be found
+          key: 4-gems-
+      - run:
+          name: Restore Gems
+          command: |
+           bundle check || bundle install
+      - save_cache:
+          key: 4-gems-{{ checksum "Gemfile.lock" }}
+          paths:
+            - "/Users/distiller/project/app/build/gems"
+      - run: cd app && bundle exec fastlane sprint
+      - store_artifacts:
+          path: "${FL_OUTPUT_DIR}/Project Name.ipa"
+  beta:
+    macos:
+      xcode: "9.3.0"
+    environment:
+      FL_OUTPUT_DIR: /Users/distiller/project/output
+      LC_ALL: en_US.UTF-8
+      LANG: en_US.UTF-8
+      BUNDLE_JOBS: 3
+      BUNDLE_RETRY: 3
+      BUNDLE_PATH: /Users/distiller/project/app/build/gems
+    shell: /bin/bash --login -eo pipefail
+    working_directory: /Users/distiller/project
+    steps:
+      - run:
+          name: Set Ruby Version
+          command:  echo "ruby-2.4" > ~/.ruby-version
+      - checkout
+      - restore_cache:
+          key: 4-gems-{{ checksum "Gemfile.lock" }}
+          # Fall back to a previous cache if exact match cannot be found
+          key: 4-gems-
+      - run:
+          name: Restore Gems
+          command: |
+           bundle check || bundle install
+      - save_cache:
+          key: 4-gems-{{ checksum "Gemfile.lock" }}
+          paths:
+            - "/Users/distiller/project/app/build/gems"
+      - run: cd app && bundle exec fastlane beta
+      - store_artifacts:
+          path: "${FL_OUTPUT_DIR}/Project Name.ipa"
+
+workflows:
+  version: 2
+  integration:
+    jobs:
+      - test:
+          filters:
+            tags:
+              only: /.*/
+      - integration:
+          requires:
+            - test
+          filters:
+            branches:
+              only: develop
+      - sprint:
+          requires:
+            - test
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /sprint-.*/
+      - beta:
+          requires:
+            - test
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /beta-.*/
