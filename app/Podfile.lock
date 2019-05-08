@@ -1,0 +1,143 @@
+PODS:
+  - Alamofire (4.8.2)
+  - Anchorage (4.3)
+  - BonMot (5.3)
+  - Crashlytics (3.12.0):
+    - Fabric (~> 1.9.0)
+  - Fabric (1.9.0)
+  - GoogleAnalytics (3.17.0)
+  - Instabug (8.3)
+  - KeychainAccess (3.2.0)
+  - Marshal (1.2.7)
+  - OHHTTPStubs/Core (8.0.0)
+  - OHHTTPStubs/Default (8.0.0):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (8.0.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (8.0.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (8.0.0)
+  - OHHTTPStubs/Swift (8.0.0):
+    - OHHTTPStubs/Default
+  - SimulatorStatusMagic (2.4.1)
+  - Sourcery (0.16.1)
+  - SwiftGen (6.1.0)
+  - Swiftilities (0.22.1):
+    - Swiftilities/All (= 0.22.1)
+  - Swiftilities/AboutView (0.22.1)
+  - Swiftilities/AccessibilityHelpers (0.22.1)
+  - Swiftilities/Acknowledgements (0.22.1):
+    - Swiftilities/Compatibility
+    - Swiftilities/Deselection
+    - Swiftilities/LicenseFormatter
+  - Swiftilities/All (0.22.1):
+    - Swiftilities/AboutView
+    - Swiftilities/AccessibilityHelpers
+    - Swiftilities/Acknowledgements
+    - Swiftilities/BetterButton
+    - Swiftilities/ColorHelpers
+    - Swiftilities/Compatibility
+    - Swiftilities/CoreDataStack
+    - Swiftilities/Deselection
+    - Swiftilities/DeviceSize
+    - Swiftilities/FormattedTextField
+    - Swiftilities/Forms
+    - Swiftilities/HairlineView
+    - Swiftilities/ImageHelpers
+    - Swiftilities/Keyboard
+    - Swiftilities/LicenseFormatter
+    - Swiftilities/Lifecycle
+    - Swiftilities/Logging
+    - Swiftilities/Math
+    - Swiftilities/RootViewController
+    - Swiftilities/Shapes
+    - Swiftilities/StackViewHelpers
+    - Swiftilities/TableViewHelpers
+    - Swiftilities/TintedButton
+    - Swiftilities/Views
+  - Swiftilities/BetterButton (0.22.1):
+    - Swiftilities/ColorHelpers
+    - Swiftilities/ImageHelpers
+    - Swiftilities/Math
+    - Swiftilities/Shapes
+  - Swiftilities/ColorHelpers (0.22.1)
+  - Swiftilities/Compatibility (0.22.1)
+  - Swiftilities/CoreDataStack (0.22.1)
+  - Swiftilities/Deselection (0.22.1)
+  - Swiftilities/DeviceSize (0.22.1)
+  - Swiftilities/FormattedTextField (0.22.1)
+  - Swiftilities/Forms (0.22.1)
+  - Swiftilities/HairlineView (0.22.1)
+  - Swiftilities/ImageHelpers (0.22.1)
+  - Swiftilities/Keyboard (0.22.1)
+  - Swiftilities/LicenseFormatter (0.22.1)
+  - Swiftilities/Lifecycle (0.22.1):
+    - Swiftilities/HairlineView
+    - Swiftilities/Math
+  - Swiftilities/Logging (0.22.1)
+  - Swiftilities/Math (0.22.1)
+  - Swiftilities/RootViewController (0.22.1)
+  - Swiftilities/Shapes (0.22.1)
+  - Swiftilities/StackViewHelpers (0.22.1)
+  - Swiftilities/TableViewHelpers (0.22.1)
+  - Swiftilities/TintedButton (0.22.1)
+  - Swiftilities/Views (0.22.1)
+  - SwiftLint (0.32.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - Anchorage
+  - BonMot
+  - Crashlytics
+  - GoogleAnalytics (~> 3.0)
+  - Instabug
+  - KeychainAccess
+  - Marshal
+  - OHHTTPStubs/Swift
+  - SimulatorStatusMagic
+  - Sourcery (~> 0.16.1)
+  - SwiftGen
+  - Swiftilities
+  - SwiftLint
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Anchorage
+    - BonMot
+    - Crashlytics
+    - Fabric
+    - GoogleAnalytics
+    - Instabug
+    - KeychainAccess
+    - Marshal
+    - OHHTTPStubs
+    - SimulatorStatusMagic
+    - Sourcery
+    - SwiftGen
+    - Swiftilities
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  Anchorage: 21a98675245188427f0bcea21404d42a824a766f
+  BonMot: 0104d1b4eda54f4a4b7393d6559539ef25498fbd
+  Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
+  Fabric: f988e33c97f08930a413e08123064d2e5f68d655
+  GoogleAnalytics: f42cc53a87a51fe94334821868d9c8481ff47a7b
+  Instabug: c61ac1b653b64596c1bd00cf5ba039f05aecb930
+  KeychainAccess: 3b1bf8a77eb4c6ea1ce9404c292e48f948954c6b
+  Marshal: ef480864a6af10a63f67be7e55bb5d8fe67a16d9
+  OHHTTPStubs: 9cbce6364bec557cc3439aa6bb7514670d780881
+  SimulatorStatusMagic: 28d4a9d1a500ac7cea0b2b5a43c1c6ddb40ba56c
+  Sourcery: 16779170d35ee204666843b09031f36721a84bcc
+  SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
+  Swiftilities: 7b57b06b46df20236a1cd9faf64ab3fd7554f4ed
+  SwiftLint: 009a898ef2a1c851f45e1b59349bf6ff2ddc990d
+
+PODFILE CHECKSUM: b619391fcaf3c1913f8f49f2d12cb4b52db43328
+
+COCOAPODS: 1.6.1
