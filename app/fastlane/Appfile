@@ -1,0 +1,4 @@
+app_identifier "com.Rightpoint.ProjectName" # The bundle identifier of your app
+apple_id "apple_id@rightpoint.com"
+
+team_id "TEAMID"  # Developer Portal Team ID
