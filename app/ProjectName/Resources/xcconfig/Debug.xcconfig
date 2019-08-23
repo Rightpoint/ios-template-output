@@ -1,0 +1,24 @@
+//
+//  Debug.xcconfig
+//  ProjectName
+//
+//  Created by Your Name on 08/23/19.
+//  Copyright © 2019 Rightpoint. All rights reserved.
+//
+
+#include "ProjectName/Resources/xcconfig/Raizlabs-Account.xcconfig"
+
+PRODUCT_BUNDLE_IDENTIFIER = com.rightpoint.project-name.debug
+PRODUCT_NAME = debug-$(TARGET_NAME)
+DEVELOPMENT_TEAM = xxxxxx // FIXME: Insert debug TEAM ID here
+
+CODE_SIGN_IDENTITY_ProjectName = iPhone Developer
+PROVISIONING_PROFILE_ProjectName = xxxxxx // FIXME: Insert debug provisioning profile ID
+// CODE_SIGN_ENTITLEMENTS = ProjectName/debug-ProjectName.entitlements // Enable to allow custom debug entitlements
+
+FABRIC_API_KEY = $(INTERNAL_FABRIC_API_KEY)
+FABRIC_BUILD_SECRET = $(INTERNAL_BUILD_SECRET)
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG
+
+// This file must be included last to properly resolve the offical Xcode variables.
+#include "ProjectName/Resources/xcconfig/Global.xcconfig"
