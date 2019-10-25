@@ -1,0 +1,24 @@
+//
+//  AppStore.xcconfig
+//  ProjectName
+//
+//  Created by Your Name on 10/25/19.
+//  Copyright © 2019 Rightpoint. All rights reserved.
+//
+
+#include "ProjectName/Resources/xcconfig/Raizlabs-Account.xcconfig"
+
+PRODUCT_BUNDLE_IDENTIFIER = //FIXME: Insert production bundle here
+PRODUCT_NAME = $(TARGET_NAME)
+DEVELOPMENT_TEAM = xxxxxx //FIXME: Insert app store TEAM ID here
+
+CODE_SIGN_IDENTITY_ProjectName = iPhone Distribution
+PROVISIONING_PROFILE_ProjectName = xxxxxx //FIXME: Insert App Store provisioning profile ID
+
+FABRIC_API_KEY = $(ProjectName_FABRIC_API_KEY)
+FABRIC_BUILD_SECRET = $(ProjectName_FABRIC_BUILD_SECRET)
+
+GA_ENVIRONMENT = production
+
+// This file must be included last to properly resolve the offical Xcode variables.
+#include "ProjectName/Resources/xcconfig/Global.xcconfig"
