@@ -1,0 +1,6 @@
+app_identifier "com.Rightpoint.ProjectName" # The bundle identifier of your app
+apple_id "apple_id@rightpoint.com"
+
+# The Rightpoint Product Enterprise Team Identifier. You can override globally
+# here or, in most fastlane functions, at the call site.
+team_id "XRTVVR644Y"
