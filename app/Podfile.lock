@@ -1,0 +1,248 @@
+PODS:
+  - Alamofire (4.9.1)
+  - Anchorage (4.3.1)
+  - AppCenter/Core (2.5.0)
+  - AppCenter/Distribute (2.5.0):
+    - AppCenter/Core
+  - BonMot (5.4.1)
+  - Crashlytics (3.14.0):
+    - Fabric (~> 1.10.2)
+  - Fabric (1.10.2)
+  - Firebase/Core (6.12.0):
+    - Firebase/CoreOnly
+    - FirebaseAnalytics (= 6.1.5)
+  - Firebase/CoreOnly (6.12.0):
+    - FirebaseCore (= 6.3.3)
+  - Firebase/Messaging (6.12.0):
+    - Firebase/CoreOnly
+    - FirebaseMessaging (~> 4.1.8)
+  - FirebaseAnalytics (6.1.5):
+    - FirebaseCore (~> 6.3)
+    - FirebaseInstanceID (~> 4.2)
+    - GoogleAppMeasurement (= 6.1.5)
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
+    - GoogleUtilities/MethodSwizzler (~> 6.0)
+    - GoogleUtilities/Network (~> 6.0)
+    - "GoogleUtilities/NSData+zlib (~> 6.0)"
+    - nanopb (= 0.3.9011)
+  - FirebaseAnalyticsInterop (1.4.0)
+  - FirebaseCore (6.3.3):
+    - FirebaseCoreDiagnostics (~> 1.0)
+    - FirebaseCoreDiagnosticsInterop (~> 1.0)
+    - GoogleUtilities/Environment (~> 6.2)
+    - GoogleUtilities/Logger (~> 6.2)
+  - FirebaseCoreDiagnostics (1.1.1):
+    - FirebaseCoreDiagnosticsInterop (~> 1.0)
+    - GoogleDataTransportCCTSupport (~> 1.0)
+    - GoogleUtilities/Environment (~> 6.2)
+    - GoogleUtilities/Logger (~> 6.2)
+    - nanopb (~> 0.3.901)
+  - FirebaseCoreDiagnosticsInterop (1.1.0)
+  - FirebaseInstanceID (4.2.7):
+    - FirebaseCore (~> 6.0)
+    - GoogleUtilities/Environment (~> 6.0)
+    - GoogleUtilities/UserDefaults (~> 6.0)
+  - FirebaseMessaging (4.1.8):
+    - FirebaseAnalyticsInterop (~> 1.3)
+    - FirebaseCore (~> 6.2)
+    - FirebaseInstanceID (~> 4.1)
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.2)
+    - GoogleUtilities/Environment (~> 6.2)
+    - GoogleUtilities/Reachability (~> 6.2)
+    - GoogleUtilities/UserDefaults (~> 6.2)
+    - Protobuf (>= 3.9.2, ~> 3.9)
+  - GoogleAppMeasurement (6.1.5):
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
+    - GoogleUtilities/MethodSwizzler (~> 6.0)
+    - GoogleUtilities/Network (~> 6.0)
+    - "GoogleUtilities/NSData+zlib (~> 6.0)"
+    - nanopb (= 0.3.9011)
+  - GoogleDataTransport (3.0.1)
+  - GoogleDataTransportCCTSupport (1.2.1):
+    - GoogleDataTransport (~> 3.0)
+    - nanopb (~> 0.3.901)
+  - GoogleUtilities/AppDelegateSwizzler (6.3.1):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+  - GoogleUtilities/Environment (6.3.1)
+  - GoogleUtilities/Logger (6.3.1):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/MethodSwizzler (6.3.1):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/Network (6.3.1):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (6.3.1)"
+  - GoogleUtilities/Reachability (6.3.1):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/UserDefaults (6.3.1):
+    - GoogleUtilities/Logger
+  - Instabug (8.7.3)
+  - KeychainAccess (4.1.0)
+  - nanopb (0.3.9011):
+    - nanopb/decode (= 0.3.9011)
+    - nanopb/encode (= 0.3.9011)
+  - nanopb/decode (0.3.9011)
+  - nanopb/encode (0.3.9011)
+  - OHHTTPStubs/Core (8.0.0)
+  - OHHTTPStubs/Default (8.0.0):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (8.0.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (8.0.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (8.0.0)
+  - OHHTTPStubs/Swift (8.0.0):
+    - OHHTTPStubs/Default
+  - Protobuf (3.10.0)
+  - SimulatorStatusMagic (2.4.1)
+  - Sourcery (0.16.2)
+  - SwiftGen (6.1.0)
+  - Swiftilities (0.25.0):
+    - Swiftilities/All (= 0.25.0)
+  - Swiftilities/AboutView (0.25.0)
+  - Swiftilities/AccessibilityHelpers (0.25.0)
+  - Swiftilities/Acknowledgements (0.25.0):
+    - Swiftilities/Compatibility
+    - Swiftilities/Deselection
+    - Swiftilities/LicenseFormatter
+  - Swiftilities/All (0.25.0):
+    - Swiftilities/AboutView
+    - Swiftilities/AccessibilityHelpers
+    - Swiftilities/Acknowledgements
+    - Swiftilities/BetterButton
+    - Swiftilities/ColorHelpers
+    - Swiftilities/Compatibility
+    - Swiftilities/CoreDataStack
+    - Swiftilities/Deselection
+    - Swiftilities/DeviceSize
+    - Swiftilities/FormattedTextField
+    - Swiftilities/Forms
+    - Swiftilities/HairlineView
+    - Swiftilities/ImageHelpers
+    - Swiftilities/Keyboard
+    - Swiftilities/LicenseFormatter
+    - Swiftilities/Lifecycle
+    - Swiftilities/Logging
+    - Swiftilities/Math
+    - Swiftilities/RootViewController
+    - Swiftilities/Shapes
+    - Swiftilities/StackViewHelpers
+    - Swiftilities/TableViewHelpers
+    - Swiftilities/TintedButton
+    - Swiftilities/Views
+  - Swiftilities/BetterButton (0.25.0):
+    - Swiftilities/ColorHelpers
+    - Swiftilities/ImageHelpers
+    - Swiftilities/Math
+    - Swiftilities/Shapes
+  - Swiftilities/ColorHelpers (0.25.0)
+  - Swiftilities/Compatibility (0.25.0)
+  - Swiftilities/CoreDataStack (0.25.0)
+  - Swiftilities/Deselection (0.25.0)
+  - Swiftilities/DeviceSize (0.25.0)
+  - Swiftilities/FormattedTextField (0.25.0)
+  - Swiftilities/Forms (0.25.0)
+  - Swiftilities/HairlineView (0.25.0)
+  - Swiftilities/ImageHelpers (0.25.0)
+  - Swiftilities/Keyboard (0.25.0)
+  - Swiftilities/LicenseFormatter (0.25.0)
+  - Swiftilities/Lifecycle (0.25.0):
+    - Swiftilities/HairlineView
+    - Swiftilities/Math
+  - Swiftilities/Logging (0.25.0)
+  - Swiftilities/Math (0.25.0)
+  - Swiftilities/RootViewController (0.25.0)
+  - Swiftilities/Shapes (0.25.0)
+  - Swiftilities/StackViewHelpers (0.25.0)
+  - Swiftilities/TableViewHelpers (0.25.0)
+  - Swiftilities/TintedButton (0.25.0)
+  - Swiftilities/Views (0.25.0)
+  - SwiftLint (0.36.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - Anchorage
+  - AppCenter/Distribute
+  - BonMot
+  - Crashlytics
+  - Firebase/Core
+  - Firebase/Messaging
+  - Instabug
+  - KeychainAccess
+  - OHHTTPStubs/Swift
+  - SimulatorStatusMagic
+  - Sourcery (~> 0.16.1)
+  - SwiftGen
+  - Swiftilities
+  - SwiftLint
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Anchorage
+    - AppCenter
+    - BonMot
+    - Crashlytics
+    - Fabric
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseAnalyticsInterop
+    - FirebaseCore
+    - FirebaseCoreDiagnostics
+    - FirebaseCoreDiagnosticsInterop
+    - FirebaseInstanceID
+    - FirebaseMessaging
+    - GoogleAppMeasurement
+    - GoogleDataTransport
+    - GoogleDataTransportCCTSupport
+    - GoogleUtilities
+    - Instabug
+    - KeychainAccess
+    - nanopb
+    - OHHTTPStubs
+    - Protobuf
+    - SimulatorStatusMagic
+    - Sourcery
+    - SwiftGen
+    - Swiftilities
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  Anchorage: a187da0bc9b07440637d42c8744b8c82a4490295
+  AppCenter: 637f180deefc61e8ab3f94223869ee50f61dabea
+  BonMot: aa82119ff2ffa184223d8a31c72aed84fbb009e0
+  Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
+  Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
+  Firebase: da031bc7012374e3bed17a6731b89327b29863b9
+  FirebaseAnalytics: 4e53a7eb7b76bc703c4d9239bc964545e9b23361
+  FirebaseAnalyticsInterop: d48b6ab67bcf016a05e55b71fc39c61c0cb6b7f3
+  FirebaseCore: bcd6c112429249d7921e907d661e8955a3549e26
+  FirebaseCoreDiagnostics: af29e43048607588c050889d19204f4d7b758c9f
+  FirebaseCoreDiagnosticsInterop: e9b1b023157e3a2fc6418b5cb601e79b9af7b3a0
+  FirebaseInstanceID: ebd2ea79ee38db0cb5f5167b17a0d387e1cc7b6e
+  FirebaseMessaging: de30f83a372a390be6f2ba44ec43a45b7ccdb43f
+  GoogleAppMeasurement: 037f46d1d8ae8b312720f1042585ab961a1289e3
+  GoogleDataTransport: 166f9b9f82cbf60a204e8fe2daa9db3e3ec1fb15
+  GoogleDataTransportCCTSupport: f6ab1962e9dc05ab1fb938b795e5b310209edeec
+  GoogleUtilities: f895fde57977df4e0233edda0dbeac490e3703b6
+  Instabug: b07a37789443c1fd49e0232ed6ddd0a6899e97ff
+  KeychainAccess: 445e28864fe6d3458b41fa211bcdc39890e8bd5a
+  nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
+  OHHTTPStubs: 9cbce6364bec557cc3439aa6bb7514670d780881
+  Protobuf: a4dc852ad69c027ca2166ed287b856697814375b
+  SimulatorStatusMagic: 28d4a9d1a500ac7cea0b2b5a43c1c6ddb40ba56c
+  Sourcery: 3f406d227efd179773b3c3599ebd1700d1a6013c
+  SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
+  Swiftilities: 219eb73f3c1d4e95812fc61d3527a5504444a405
+  SwiftLint: fc9859e4e1752340664851f667bb1898b9c90114
+
+PODFILE CHECKSUM: 8c12e67d7baf3372a67b9eeba9a4521e15d0125b
+
+COCOAPODS: 1.8.4

@@ -1,0 +1,31 @@
+//
+//  Sprint.xcconfig
+//  ProjectName
+//
+//  Created by Your Name on 11/06/19.
+//  Copyright © 2019 Rightpoint. All rights reserved.
+//
+
+#include "ProjectName/Resources/xcconfig/Raizlabs-Account.xcconfig"
+
+PRODUCT_BUNDLE_IDENTIFIER = com.raizlabs.ProjectName.sprint
+PRODUCT_NAME = sprint-$(TARGET_NAME)
+
+CODE_SIGN_IDENTITY_ProjectName = iPhone Distribution
+
+// FIXME: These values are the Rightpoint Enterprise Team ID and wild card provisioning profile UUID by default.
+// Use these, or correct to your own sprint team ID and provisioning profile ID:
+DEVELOPMENT_TEAM = XRTVVR644Y
+PROVISIONING_PROFILE_ProjectName = 8876e481-f80e-42c0-bb05-762de956a67c
+
+// CODE_SIGN_ENTITLEMENTS = ProjectName/sprint-ProjectName.entitlements // Enable to allow custom debug entitlements
+
+FABRIC_API_KEY = $(INTERNAL_FABRIC_API_KEY)
+FABRIC_BUILD_SECRET = $(INTERNAL_BUILD_SECRET)
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = RZINTERNAL
+
+//FIXME: Insert AppCenter Secret
+// APPCENTER_APP_SECRET = xxxxxx
+
+// This file must be included last to properly resolve the offical Xcode variables.
+#include "ProjectName/Resources/xcconfig/Global.xcconfig"
